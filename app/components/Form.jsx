@@ -32,7 +32,7 @@ function Form() {
     };
 
     const uploadFile=()=>{
-        const storageRef=ref(storage,'pinterest/'+file?.name);
+        const storageRef=ref(storage,'pinterest/'+file.name);
         uploadBytes(storageRef,file).then((snapshot)=>{
             console.log("File Uploaded")
         }).then(resp=>{
