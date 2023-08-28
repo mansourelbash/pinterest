@@ -1,14 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  trailingSlash: true,
   images: {
-    domains: ['lh3.googleusercontent.com', 'firebasestorage.googleapis.com']
+    domains:['lh3.googleusercontent.com','firebasestorage.googleapis.com']
   },
+  output: 'export',
+}
 
-  output: {
-    // Set your target directory for the exported files
-    // For example, you can use 'out' or any other directory name
-    directory: 'out',
-  },
-};
+module.exports = nextConfig
 
-module.exports = nextConfig;
