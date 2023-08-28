@@ -5,10 +5,12 @@ import {getDoc,doc, getFirestore } from 'firebase/firestore'
 import PinInfo from '../../components/PinDetail/PinInfo'
 import PinImage from '../../components/PinDetail/PinImage'
 import { HiArrowSmallLeft } from "react-icons/hi2";
+import { useRouter } from 'next/navigation';
 
 const DetailsPin = ({params}) => {
   const [PinDetail, setPinDetail]= useState([])
   const db=getFirestore(app);
+  const router = useRouter()
 
   useEffect(()=>{
     getPinDetail()
