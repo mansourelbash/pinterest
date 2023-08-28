@@ -17,11 +17,11 @@ export default function Home() {
   const {data:session}=useSession();
   const auth = getAuth(app);
   const router=useRouter();
-  const currentUser = auth.currentUser;
+  // const currentUser = auth.currentUser;
   useEffect(()=>{
     getAllPins();
     getAllUsers();
-    if(!session || !currentUser){
+    if(!session){
       router.push('/')
     }
   },[])
@@ -63,7 +63,7 @@ export default function Home() {
   return (
     <>
     <div className='p-3'>
-     {session?.user || currentUser ? <PinList listOfPins={listOfPins} />  : null} 
+     {session?.user ? <PinList listOfPins={listOfPins} />  : null} 
       </div>
     </>
   )

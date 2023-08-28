@@ -32,12 +32,12 @@ const Header = () => {
     }
   }, [session]);
 
-  useEffect(() => {
-    setNewName(auth?.currentUser?.email)
-  }, [auth.currentUser]);
+  // useEffect(() => {
+  //   setNewName(auth?.currentUser?.email)
+  // }, [auth.currentUser]);
 
   const onCreateClick = ()=>{
-    if(session || auth.currentUser){
+    if(session){
       router.push('/pin-builder')
     }else{
       signIn();
